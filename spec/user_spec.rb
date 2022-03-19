@@ -5,7 +5,6 @@ RSpec.describe User, :type => :model do
   subject {
     User.new(name: "Anything",
                         age: 10,
-                        hobby: "Painting",
                         address: "123 Hobby Street",
                         email: "hi@hi.com",
                         password: "password")
@@ -23,11 +22,7 @@ RSpec.describe User, :type => :model do
 
     expect(subject).to_not be_valid
   end
-  it "is not valid without a hobby" do
-    subject.hobby = nil
 
-    expect(subject).to_not be_valid
-  end
   it "is not valid without an address" do
     subject.address = nil
 
